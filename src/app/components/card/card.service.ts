@@ -7,7 +7,7 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class CardService {
-  private domain: string = 'http://www.omdbapi.com/';
+  private domain: string = 'https://www.omdbapi.com/';
   private apiKey: string = '90af6be8';
 
   constructor(private http:HttpClient) {}
