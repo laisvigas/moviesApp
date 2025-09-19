@@ -1,0 +1,33 @@
+<div class="container py-4" *ngIf="movie as m">
+  <div class="row g-4 mt-3">
+    <div class="col-12">
+      <app-card-details
+        [Title]="m.Title"
+        [Year]="m.Year"
+        [Rated]="m.Rated"
+        [Released]="m.Released"
+        [Runtime]="m.Runtime"
+        [Genre]="m.Genre"
+        [Director]="m.Director"
+        [Writer]="m.Writer"
+        [Actors]="m.Actors"
+        [Plot]="m.Plot"
+        [Language]="m.Language"
+        [Country]="m.Country"
+        [Awards]="m.Awards"
+        [Poster]="m.Poster"
+        [Ratings]="m.Ratings"
+        [Metascore]="m.Metascore"
+        [imdbRating]="m.imdbRating"
+        [imdbVotes]="m.imdbVotes"
+        [imdbID]="m.imdbID"
+        [Type]="m.Type"
+        [DVD]="m.DVD"
+        [BoxOffice]="m.BoxOffice"
+        [Production]="m.Production"
+        [Website]="m.Website"
+        [Response]="m.Response">
+      </app-card-details>
+    </div>
+  </div>
+</div>

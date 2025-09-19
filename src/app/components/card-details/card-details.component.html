@@ -1,0 +1,56 @@
+<div class="card h-100">
+  <div class="row g-0">
+    <!-- img col-->
+    <div class="col-md-4 d-flex justify-content-center align-items-center">
+      <img
+        [src]="Poster"
+        class="img-fluid rounded-start"
+        [alt]="Title || 'Imagem'"
+        style="aspect-ratio: 2/3; object-fit: cover; max-height: 680px"
+      />
+    </div>
+
+
+    <!-- info col -->
+    <div class="col-md-8">
+      <div class="card-body">
+        <h1 class="card-title" *ngIf="Title">{{ Title }}</h1>
+
+        <p class="text-muted mb-2">
+          <span *ngIf="Year">{{ Year }}</span>
+          <span *ngIf="Type"> • {{ Type }}</span>
+          <span *ngIf="Runtime"> • {{ Runtime }}</span>
+          <span *ngIf="Rated"> • {{ Rated }}</span>
+        </p>
+
+        <p class="mb-3" *ngIf="Plot">{{ Plot }}</p>
+
+        <ul class="list-unstyled small mb-3">
+          <li *ngIf="Director"><strong>Director:</strong> {{ Director }}</li>
+          <li *ngIf="Writer"><strong>Writer:</strong> {{ Writer }}</li>
+          <li *ngIf="Actors"><strong>Actors:</strong> {{ Actors }}</li>
+          <li *ngIf="Genre"><strong>Genre:</strong> {{ Genre }}</li>
+          <li *ngIf="Released"><strong>Released:</strong> {{ Released }}</li>
+          <li *ngIf="Language"><strong>Language:</strong> {{ Language }}</li>
+          <li *ngIf="Country"><strong>Country:</strong> {{ Country }}</li>
+          <li *ngIf="Awards"><strong>Awards:</strong> {{ Awards }}</li>
+          <li *ngIf="BoxOffice"><strong>Box Office:</strong> {{ BoxOffice }}</li>
+          <li *ngIf="Production"><strong>Production:</strong> {{ Production }}</li>
+          <li *ngIf="DVD"><strong>DVD:</strong> {{ DVD }}</li>
+          <li *ngIf="Metascore"><strong>Metascore:</strong> {{ Metascore }}</li>
+          <li *ngIf="imdbRating"><strong>IMDb Rating:</strong> {{ imdbRating }}</li>
+          <li *ngIf="imdbVotes"><strong>IMDb Votes:</strong> {{ imdbVotes }}</li>
+        </ul>
+
+        <div *ngIf="Ratings?.length">
+          <h6 class="mb-2">Ratings</h6>
+          <div class="d-flex flex-wrap gap-2">
+            <span class="badge bg-secondary" *ngFor="let r of Ratings">
+              {{ r.Source }}: {{ r.Value }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
