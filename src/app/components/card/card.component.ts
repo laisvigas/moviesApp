@@ -1,18 +1,19 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent {
-  @Input() Title = ""
-  @Input() Year = ""
-  @Input() imdbID = ""
-  @Input() Type = ""
-  @Input() Poster = "";
+  @Input() Title = '';
+  @Input() Year = '';
+  @Input() imdbID = '';
+  @Input() Type = '';
+  @Input() Poster = '';
   @Input() Button = false;
 }

@@ -1,43 +1,24 @@
 <div class="container py-4">
   <!-- header -->
-  <div class="mb-3">
-    <h1 class="m-0 mb-3">Movies</h1>
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <h1 class="m-0">Movies</h1>
 
-    <!-- filtros -->
-    <div class="d-flex flex-wrap align-items-center gap-2">
-      <!-- Search by name (FORM 1) -->
-      <form class="input-group input-group-sm w-auto" (ngSubmit)="getMovies()">
+    <form class="ms-auto w-auto" (ngSubmit)="getMovies()" role="search">
+      <div class="input-group input-group-sm">
         <input
           name="search"
           [(ngModel)]="search"
           mdbInput
-          type="text"
-          class="form-control form-control-sm w-50"
-          placeholder="by name, ex: harry"
-          required
+          type="search"
+          class="form-control"
+          placeholder="Search title…"
+          aria-label="Search movies by title"
         />
-        <button type="submit" class="btn btn-success" mdbRipple>
+        <button type="submit" class="btn btn-primary" mdbRipple [disabled]="!search?.trim()">
           Search
         </button>
-      </form>
-
-      <!-- Search by ID (FORM 2) -->
-      <form class="input-group input-group-sm w-auto" (ngSubmit)="goToId()">
-        <input
-          name="imdbId"
-          [(ngModel)]="imdbId"
-          mdbInput
-          type="text"
-          class="form-control form-control-sm w-50"
-          placeholder="by ID, ex: tt0118799"
-          required
-        />
-        <button type="submit" class="btn btn-primary" mdbRipple>
-          Search
-        </button>
-      </form>
-    </div>
-
+      </div>
+    </form>
   </div>
 
   <!-- movies grid -->

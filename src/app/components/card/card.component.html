@@ -11,7 +11,7 @@
     <p class="card-text" *ngIf="Type">{{ Type }}</p>
     <p class="text-muted mb-3" *ngIf="Year">{{ Year }}</p>
 
-    <a *ngIf="Button" href="#!" class="btn btn-dark mt-auto w-100">See more</a>
+    <a *ngIf="Button" class="btn btn-dark mt-auto w-100" [routerLink]="['/movie-details', imdbID]">See details</a>
   </div>
 </div>
 
